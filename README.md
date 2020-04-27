@@ -25,6 +25,7 @@
 - 工单申请
 - 用户中心
 - 信息反馈
+
                                         2020.04.27
 
 ---
@@ -33,8 +34,8 @@
 
 ---
 
-* Development tools: Jdk1.8, IDEA, MySQL, Tomcat, layui*
-*Adopt SpringBoot framework, not good enough to master Hibernate and JPA *
+*Development tools: Jdk1.8, IDEA, MySQL, Tomcat, layui*
+*Adopt SpringBoot framework, not good enough to master Hibernate and JPA*
 ---
 
 ### Administrator layer:
@@ -55,6 +56,7 @@
 - Work order application
 - User Center
 - information feedback
+
                                         2020.04.27
 
 ---
