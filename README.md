@@ -4,7 +4,7 @@
 
 *开发工具：Jdk1.8,IDEA,MySQL,Tomcat,layui*
 
-*采用SpringBoot框架，对Hibernate和JPA掌握得不够好*
+__采用SpringBoot框架，对Hibernate和JPA掌握得不够好__
 ---
 
 ### 管理员层：
@@ -36,7 +36,7 @@
 
 *Development tools: Jdk1.8, IDEA, MySQL, Tomcat, layui*
 
-*Adopt SpringBoot framework, not good enough to master Hibernate and JPA*
+__Adopt SpringBoot framework, not good enough to master Hibernate and JPA__
 ---
 
 ### Administrator layer:
