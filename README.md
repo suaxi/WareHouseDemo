@@ -4,7 +4,7 @@
 
 *开发工具：Jdk1.8,IDEA,MySQL,Tomcat,layui*
 
-*采用SpringBoot框架，对Hibernate和JPA掌握得不够好*
+*采用SpringBoot Jpa*
 
 ---
 
@@ -37,7 +37,7 @@
 
 *Development tools: Jdk1.8, IDEA, MySQL, Tomcat, layui*
 
-*Adopt SpringBoot framework, not good enough to master Hibernate and JPA*
+*Adopt SpringBoot Jpa*
 
 ---
 
