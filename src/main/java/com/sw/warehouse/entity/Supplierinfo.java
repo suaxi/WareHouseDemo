@@ -1,63 +1,43 @@
 package com.sw.warehouse.entity;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
-@Entity(name="supplierinfo") //表名
-public class Supplierinfo {
-	@Id //主键
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;	//ID 
-	private String suppliername;	//供应商 
-	private String supplier;	//联系人 
-	private String phone;	//电话 
-	private String intro;	//备注 
+@Entity(name = "supplierinfo")
+@Data
+public class Supplierinfo implements Serializable {
 
-	public Supplierinfo (){
+    /**
+     * ID
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	}
+    /**
+     * 供应商
+     */
+    private String suppliername;
 
-	public void setId(Integer id){
-		this.id=id;
-	}
-	public Integer getId(){
-		return id;
-	}
+    /**
+     * 联系人
+     */
+    private String supplier;
 
-	public void setSuppliername(String suppliername){
-		this.suppliername=suppliername;
-	}
-	public String getSuppliername(){
-		return suppliername;
-	}
+    /**
+     * 电话
+     */
+    private String phone;
 
-	public void setSupplier(String supplier){
-		this.supplier=supplier;
-	}
-	public String getSupplier(){
-		return supplier;
-	}
-
-	public void setPhone(String phone){
-		this.phone=phone;
-	}
-	public String getPhone(){
-		return phone;
-	}
-
-	public void setIntro(String intro){
-		this.intro=intro;
-	}
-	public String getIntro(){
-		return intro;
-	}
-
-	@Override
-	public String toString(){
-		return " Supplierinfo [id=" + id+ " , suppliername=" + suppliername+ " , supplier=" + supplier+ " , phone=" + phone+ " , intro=" + intro+"]";
-	}
+    /**
+     * 备注
+     */
+    private String intro;
 
 }
 

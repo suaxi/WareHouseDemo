@@ -1,154 +1,84 @@
 package com.sw.warehouse.entity;
 
+import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name="userinfo") //表名
+@Data
+@Entity(name = "userinfo")
 @EntityListeners(AuditingEntityListener.class)
-public class Userinfo {
-	@Id //主键
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;	//ID 
-	private String username;	//姓名
-	private String photo; //照片
-	private String sex;	//性别 
-	private String idnumber;	//身份证 
-	private String phone;	//电话 
-	private String address;	//地址 
-	private String role;	//角色 
-	private String password;	//密码 
-	private String intro;	//备注
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date entrytime; //入职时间
-	@CreatedDate
-	@Column(name = "createtime",updatable = false,nullable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date createtime;	//添加纪录时间
+public class Userinfo implements Serializable {
 
-	public Userinfo() {
-	}
+    /**
+     * ID
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	public Userinfo(String username, String password) {
-		this.username = username;
-		this.password = password;
-	}
+    /**
+     * 姓名
+     */
+    private String username;
 
-	public Integer getId() {
-		return id;
-	}
+    /**
+     * 照片
+     */
+    private String photo;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    /**
+     * 性别
+     */
+    private String sex;
 
-	public String getUsername() {
-		return username;
-	}
+    /**
+     * 身份证
+     */
+    private String idnumber;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    /**
+     * 电话
+     */
+    private String phone;
 
-	public String getPhoto() {
-		return photo;
-	}
+    /**
+     * 地址
+     */
+    private String address;
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+    /**
+     * 角色
+     */
+    private String role;
 
-	public String getSex() {
-		return sex;
-	}
+    /**
+     * 密码
+     */
+    private String password;
 
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
+    /**
+     * 备注
+     */
+    private String intro;
 
-	public String getIdnumber() {
-		return idnumber;
-	}
+    /**
+     * 入职时间
+     */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date entrytime;
 
-	public void setIdnumber(String idnumber) {
-		this.idnumber = idnumber;
-	}
+    /**
+     * 添加信息时间
+     */
+    @CreatedDate
+    @Column(name = "createtime", updatable = false, nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createtime;
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getIntro() {
-		return intro;
-	}
-
-	public void setIntro(String intro) {
-		this.intro = intro;
-	}
-
-	public Date getEntrytime() {
-		return entrytime;
-	}
-
-	public void setEntrytime(Date entrytime) {
-		this.entrytime = entrytime;
-	}
-
-	public Date getCreatetime() {
-		return createtime;
-	}
-
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
-
-	@Override
-	public String toString() {
-		return "Userinfo{" +
-				"id=" + id +
-				", username='" + username + '\'' +
-				", photo='" + photo + '\'' +
-				", sex='" + sex + '\'' +
-				", idnumber='" + idnumber + '\'' +
-				", phone='" + phone + '\'' +
-				", address='" + address + '\'' +
-				", role='" + role + '\'' +
-				", password='" + password + '\'' +
-				", intro='" + intro + '\'' +
-				", entrytime=" + entrytime +
-				", createtime=" + createtime +
-				'}';
-	}
 }
 

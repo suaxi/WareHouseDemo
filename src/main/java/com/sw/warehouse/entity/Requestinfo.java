@@ -1,163 +1,92 @@
 package com.sw.warehouse.entity;
 
+import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name="requestinfo") //表名
+@Entity(name = "requestinfo")
 @EntityListeners(AuditingEntityListener.class)
-public class Requestinfo {
-	@Id //主键
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;	//ID
-	private String productname;	//名称 
-	private String warehousename;	//仓库 
-	private String suppliername;	//供应商 
-	private Double price;	//价格
-	private Integer amount;	//数量 
-	private String operating;	//出/入库操作 
-	private String intro;	//类别 
-	private String msg;	//备注
-	@CreatedDate
-	@Column(name = "createtime",updatable = false,nullable = false)
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date createtime;	//提交时间 
-	private Integer status;	//处理状态
-	@LastModifiedDate
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@Column(name = "dealtime",nullable = false)
-	private Date dealtime;	//操作时间
-	private Integer statuscheck;	//工单状态
+@Data
+public class Requestinfo implements Serializable {
 
-	public Requestinfo (){
+    /**
+     * ID
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-	}
+    /**
+     * 名称
+     */
+    private String productname;
 
-	public Integer getId() {
-		return id;
-	}
+    /**
+     * 仓库
+     */
+    private String warehousename;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    /**
+     * 供应商
+     */
+    private String suppliername;
 
-	public String getProductname() {
-		return productname;
-	}
+    /**
+     * 价格
+     */
+    private Double price;
 
-	public void setProductname(String productname) {
-		this.productname = productname;
-	}
+    /**
+     * 数量
+     */
+    private Integer amount;
 
-	public String getWarehousename() {
-		return warehousename;
-	}
+    /**
+     * 出入库操作
+     */
+    private String operating;
 
-	public void setWarehousename(String warehousename) {
-		this.warehousename = warehousename;
-	}
+    /**
+     * 类别
+     */
+    private String intro;
 
-	public String getSuppliername() {
-		return suppliername;
-	}
+    /**
+     * 备注
+     */
+    private String msg;
 
-	public void setSuppliername(String suppliername) {
-		this.suppliername = suppliername;
-	}
+    /**
+     * 提交时间
+     */
+    @CreatedDate
+    @Column(name = "createtime", updatable = false, nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createtime;
 
-	public Double getPrice() {
-		return price;
-	}
+    /**
+     * 处理状态
+     */
+    private Integer status;
 
-	public void setPrice(Double price) {
-		this.price = price;
-	}
+    /**
+     * 操作时间
+     */
+    @LastModifiedDate
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Column(name = "dealtime", nullable = false)
+    private Date dealtime;
 
-	public Integer getAmount() {
-		return amount;
-	}
+    /**
+     * 工单状态
+     */
+    private Integer statuscheck;
 
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
-
-	public String getOperating() {
-		return operating;
-	}
-
-	public void setOperating(String operating) {
-		this.operating = operating;
-	}
-
-	public String getIntro() {
-		return intro;
-	}
-
-	public void setIntro(String intro) {
-		this.intro = intro;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	public Date getCreatetime() {
-		return createtime;
-	}
-
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
-	public Date getDealtime() {
-		return dealtime;
-	}
-
-	public void setDealtime(Date dealtime) {
-		this.dealtime = dealtime;
-	}
-
-	public Integer getStatuscheck() {
-		return statuscheck;
-	}
-
-	public void setStatuscheck(Integer statuscheck) {
-		this.statuscheck = statuscheck;
-	}
-
-	@Override
-	public String toString() {
-		return "Requestinfo{" +
-				"id=" + id +
-				", productname='" + productname + '\'' +
-				", warehousename='" + warehousename + '\'' +
-				", suppliername='" + suppliername + '\'' +
-				", price=" + price +
-				", amount=" + amount +
-				", operating='" + operating + '\'' +
-				", intro='" + intro + '\'' +
-				", msg='" + msg + '\'' +
-				", createtime=" + createtime +
-				", status=" + status +
-				", dealtime=" + dealtime +
-				", statuscheck=" + statuscheck +
-				'}';
-	}
 }
 
